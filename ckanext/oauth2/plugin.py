@@ -99,7 +99,7 @@ class OAuth2Plugin(plugins.SingletonPlugin):
     def before_map(self, m):
         log.debug('Setting up the redirections to the OAuth2 service')
 
-        m.connect('/user/login',
+        m.connect('/user/login/azure',
                   controller='ckanext.oauth2.controller:OAuth2Controller',
                   action='login')
 
