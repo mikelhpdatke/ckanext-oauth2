@@ -92,12 +92,12 @@ class OAuth2Plugin(plugins.SingletonPlugin):
 
     def __init__(self, name=None):
         '''Store the OAuth 2 client configuration'''
-        log.debug('Init OAuth2 extension')
+        #log.debug('Init OAuth2 extension')
 
         self.oauth2helper = oauth2.OAuth2Helper()
 
     def before_map(self, m):
-        log.debug('Setting up the redirections to the OAuth2 service')
+        #log.debug('Setting up the redirections to the OAuth2 service')
 
         m.connect('/user/login/azure',
                   controller='ckanext.oauth2.controller:OAuth2Controller',
@@ -124,7 +124,7 @@ class OAuth2Plugin(plugins.SingletonPlugin):
         return m
 
     def identify(self):
-        log.debug('identify')
+        #log.debug('identify')
 
         def _refresh_and_save_token(user_name):
             new_token = self.oauth2helper.refresh_token(user_name)
