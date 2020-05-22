@@ -166,11 +166,12 @@ class OAuth2Plugin(plugins.SingletonPlugin):
 
     def get_auth_functions(self):
         # we need to prevent some actions being authorized.
+        # commented out actions!!!
         return {
-            'user_create': user_create,
-            'user_update': user_update,
-            'user_reset': user_reset,
-            'request_reset': request_reset
+            # 'user_create': user_create,
+            # 'user_update': user_update,
+            # 'user_reset': user_reset,
+            # 'request_reset': request_reset
         }
 
     def update_config(self, config):
