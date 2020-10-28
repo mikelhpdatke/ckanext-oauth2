@@ -152,7 +152,7 @@ class OAuth2Plugin(plugins.SingletonPlugin):
         # If the authentication via API fails, we can still log in the user using session.
         if user_name is None and 'repoze.who.identity' in environ:
             user_name = environ['repoze.who.identity']['repoze.who.userid']
-            log.info('User %s logged using session' % user_name)
+            log.debug('User %s logged using session' % user_name)
 
         # If we have been able to log in the user (via API or Session)
         if user_name:
