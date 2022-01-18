@@ -1,0 +1,15 @@
+{% ckan_extends %}
+
+{% block primary_content %}
+  <section class="module">
+    <div class="module-content">
+      <h1 class="page-heading">{% block page_heading %}{{ _('Login') }}{% endblock %}</h1>
+      {% block form %}
+        {% snippet "user/snippets/login_form.html", action=g.login_handler, error_summary=error_summary %}
+        <form action="/user/login/oauth2">
+            <button class="btn btn-primary">{{ _('Sign in with Google') }}</button>
+            </form>
+        {% endblock %}
+    </div>
+  </section>
+{% endblock %}
