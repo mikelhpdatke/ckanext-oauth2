@@ -162,7 +162,7 @@ class OAuth2Plugin(plugins.SingletonPlugin):
             toolkit.c.usertoken_refresh = partial(_refresh_and_save_token, user_name)
         else:
             g.user = None
-            log.warn('The user is not currently logged...')
+            # log.warn('The user is not currently logged...')
 
     def get_auth_functions(self):
         # we need to prevent some actions being authorized.
