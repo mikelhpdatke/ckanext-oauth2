@@ -220,7 +220,8 @@ class OAuth2Helper(object):
     def redirect_from_callback(self):
         '''Redirect to the callback URL after a successful authentication.'''
         state = toolkit.request.params.get('state')
-        came_from = get_came_from(state)
+        # came_from = get_came_from(state)
+        came_from = '/'
         toolkit.response.status = 302
         toolkit.response.location = came_from
 
